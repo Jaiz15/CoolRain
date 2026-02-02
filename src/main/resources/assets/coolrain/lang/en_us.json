@@ -1,0 +1,16 @@
+{
+  "sounds.coolrain.rain_sounds_metal": "Rain on metal",
+  "sounds.coolrain.rain_sounds_lava": "Heat sizzles from rain",
+  "sounds.coolrain.rain_sounds_fabric": "Rain on fabric",
+  "sounds.coolrain.rain_sounds_foliage": "Rain on leaves",
+  "sounds.coolrain.rain_sounds_glass": "Rain on glass",
+  "sounds.coolrain.rain_sounds_water": "Rain on water",
+
+  "sounds.coolrain.wind_sounds": "Stormy wind whooshes",
+  "sounds.coolrain.rolling_thunder": "Far off thunder rumbles",
+
+  "sounds.coolrain.rain_sounds_amethyst": "Rain causes crystal to chime",
+  "sounds.coolrain.rain_sounds_noteblock": "Rain causes noteblock to chime",
+
+  "coolrain.midnightconfig.title": "CoolRain Config"
+}

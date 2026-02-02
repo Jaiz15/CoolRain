@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "coolrain",
+	"version": "${version}",
+	"name": "CoolRain",
+	"description": "Cool as hell local rain sounds",
+	"authors": [
+		"Jaiz",
+		"\n",
+		"Config Coding Help:",
+		"trashoflevillage",
+		"\n ",
+		"NeoForge Port and Coding Help:",
+		"Leclowndu93150"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/coolrain",
+		"sources": "https://github.com/Jaiz15/CoolRain_1.21.8"
+	},
+	"license": "ARR",
+	"icon": "assets/coolrain/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"client": [
+			"jaiz.coolrain.CoolRainClient"
+		],
+		"modmenu": [
+			"jaiz.coolrain.config.ModMenuIntegration"
+		]
+	},
+	"mixins": [
+		"coolrain.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
