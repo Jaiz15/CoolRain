@@ -1,13 +1,12 @@
 package jaiz.coolrain.config;
 
 import eu.midnightdust.lib.config.MidnightConfig;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.registry.Registries;
-import net.minecraft.util.Identifier;
-
 import java.util.ArrayList;
 import java.util.List;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 
 public class CoolRainConfig extends MidnightConfig {
     public static final String GENERAL = "general";
@@ -15,7 +14,7 @@ public class CoolRainConfig extends MidnightConfig {
     private static List<Identifier> toIdHelper(List<Block> blocks) {
         ArrayList<Identifier> output = new ArrayList<>();
         for (Block b : blocks) {
-            output.add(Registries.BLOCK.getId(b));
+            output.add(BuiltInRegistries.BLOCK.getKey(b));
 
         }
         return output;
@@ -69,10 +68,10 @@ public class CoolRainConfig extends MidnightConfig {
                     Blocks.CRACKED_DEEPSLATE_TILES, Blocks.DEEPSLATE_TILE_SLAB, Blocks.DEEPSLATE_TILES, Blocks.DEEPSLATE_TILE_STAIRS,
                     Blocks.GOLD_BLOCK, Blocks.CAULDRON, Blocks.ANVIL, Blocks.CHIPPED_ANVIL, Blocks.DAMAGED_ANVIL, Blocks.SMITHING_TABLE,
                     Blocks.ANCIENT_DEBRIS, Blocks.GILDED_BLACKSTONE, Blocks.TRIAL_SPAWNER, Blocks.VAULT, Blocks.SPAWNER, Blocks.HOPPER, Blocks.IRON_CHAIN,
-                    Blocks.COPPER_LANTERNS.unaffected(), Blocks.COPPER_LANTERNS.exposed(), Blocks.COPPER_LANTERNS.weathered(), Blocks.COPPER_LANTERNS.oxidized(),
-                    Blocks.COPPER_LANTERNS.waxed(), Blocks.COPPER_LANTERNS.waxedExposed(), Blocks.COPPER_LANTERNS.waxedWeathered(), Blocks.COPPER_LANTERNS.waxedOxidized(),
-                    Blocks.COPPER_CHAINS.unaffected(), Blocks.COPPER_CHAINS.exposed(), Blocks.COPPER_CHAINS.weathered(), Blocks.COPPER_CHAINS.oxidized(),
-                    Blocks.COPPER_CHAINS.waxed(), Blocks.COPPER_CHAINS.waxedExposed(), Blocks.COPPER_CHAINS.waxedWeathered(), Blocks.COPPER_CHAINS.waxedOxidized(),
+                    Blocks.COPPER_LANTERN.unaffected(), Blocks.COPPER_LANTERN.exposed(), Blocks.COPPER_LANTERN.weathered(), Blocks.COPPER_LANTERN.oxidized(),
+                    Blocks.COPPER_LANTERN.waxed(), Blocks.COPPER_LANTERN.waxedExposed(), Blocks.COPPER_LANTERN.waxedWeathered(), Blocks.COPPER_LANTERN.waxedOxidized(),
+                    Blocks.COPPER_CHAIN.unaffected(), Blocks.COPPER_CHAIN.exposed(), Blocks.COPPER_CHAIN.weathered(), Blocks.COPPER_CHAIN.oxidized(),
+                    Blocks.COPPER_CHAIN.waxed(), Blocks.COPPER_CHAIN.waxedExposed(), Blocks.COPPER_CHAIN.waxedWeathered(), Blocks.COPPER_CHAIN.waxedOxidized(),
                     Blocks.COPPER_CHEST, Blocks.EXPOSED_COPPER_CHEST, Blocks.WEATHERED_COPPER_CHEST, Blocks.OXIDIZED_COPPER_CHEST,
                     Blocks.WAXED_COPPER_CHEST, Blocks.WAXED_EXPOSED_COPPER_CHEST, Blocks.WAXED_WEATHERED_COPPER_CHEST, Blocks.WAXED_OXIDIZED_COPPER_CHEST,
                     Blocks.COPPER_GOLEM_STATUE, Blocks.EXPOSED_COPPER_GOLEM_STATUE, Blocks.WEATHERED_COPPER_GOLEM_STATUE, Blocks.OXIDIZED_COPPER_GOLEM_STATUE,
