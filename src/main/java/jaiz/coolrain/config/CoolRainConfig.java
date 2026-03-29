@@ -68,7 +68,15 @@ public class CoolRainConfig extends MidnightConfig {
                     Blocks.IRON_BLOCK, Blocks.RAW_IRON_BLOCK, Blocks.RAW_COPPER_BLOCK, Blocks.RAW_GOLD_BLOCK,
                     Blocks.CRACKED_DEEPSLATE_TILES, Blocks.DEEPSLATE_TILE_SLAB, Blocks.DEEPSLATE_TILES, Blocks.DEEPSLATE_TILE_STAIRS,
                     Blocks.GOLD_BLOCK, Blocks.CAULDRON, Blocks.ANVIL, Blocks.CHIPPED_ANVIL, Blocks.DAMAGED_ANVIL, Blocks.SMITHING_TABLE,
-                    Blocks.ANCIENT_DEBRIS, Blocks.GILDED_BLACKSTONE, Blocks.TRIAL_SPAWNER, Blocks.VAULT, Blocks.SPAWNER, Blocks.HOPPER, Blocks.CHAIN
+                    Blocks.ANCIENT_DEBRIS, Blocks.GILDED_BLACKSTONE, Blocks.TRIAL_SPAWNER, Blocks.VAULT, Blocks.SPAWNER, Blocks.HOPPER, Blocks.IRON_CHAIN,
+                    Blocks.COPPER_LANTERNS.unaffected(), Blocks.COPPER_LANTERNS.exposed(), Blocks.COPPER_LANTERNS.weathered(), Blocks.COPPER_LANTERNS.oxidized(),
+                    Blocks.COPPER_LANTERNS.waxed(), Blocks.COPPER_LANTERNS.waxedExposed(), Blocks.COPPER_LANTERNS.waxedWeathered(), Blocks.COPPER_LANTERNS.waxedOxidized(),
+                    Blocks.COPPER_CHAINS.unaffected(), Blocks.COPPER_CHAINS.exposed(), Blocks.COPPER_CHAINS.weathered(), Blocks.COPPER_CHAINS.oxidized(),
+                    Blocks.COPPER_CHAINS.waxed(), Blocks.COPPER_CHAINS.waxedExposed(), Blocks.COPPER_CHAINS.waxedWeathered(), Blocks.COPPER_CHAINS.waxedOxidized(),
+                    Blocks.COPPER_CHEST, Blocks.EXPOSED_COPPER_CHEST, Blocks.WEATHERED_COPPER_CHEST, Blocks.OXIDIZED_COPPER_CHEST,
+                    Blocks.WAXED_COPPER_CHEST, Blocks.WAXED_EXPOSED_COPPER_CHEST, Blocks.WAXED_WEATHERED_COPPER_CHEST, Blocks.WAXED_OXIDIZED_COPPER_CHEST,
+                    Blocks.COPPER_GOLEM_STATUE, Blocks.EXPOSED_COPPER_GOLEM_STATUE, Blocks.WEATHERED_COPPER_GOLEM_STATUE, Blocks.OXIDIZED_COPPER_GOLEM_STATUE,
+                    Blocks.WAXED_COPPER_GOLEM_STATUE, Blocks.WAXED_EXPOSED_COPPER_GOLEM_STATUE, Blocks.WAXED_WEATHERED_COPPER_GOLEM_STATUE, Blocks.WAXED_OXIDIZED_COPPER_GOLEM_STATUE
             )
     );
 
