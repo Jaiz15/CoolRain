@@ -1,0 +1,16 @@
+{
+  "sounds.coolrain.rain_sounds_metal": "Pluie sur du métal",
+  "sounds.coolrain.rain_sounds_lava": "Chaleur grésillant sous la pluie",
+  "sounds.coolrain.rain_sounds_fabric": "Pluie sur du tissu",
+  "sounds.coolrain.rain_sounds_foliage": "Pluie sur des feuilles",
+  "sounds.coolrain.rain_sounds_glass": "Pluie sur l'herbe",
+  "sounds.coolrain.rain_sounds_water": "Pluie sur l'eau",
+
+  "sounds.coolrain.wind_sounds": "Rafales de vent",
+  "sounds.coolrain.rolling_thunder": "Grondement de tonnerre lointain",
+
+  "sounds.coolrain.rain_sounds_amethyst": "Cristal tintant sous la pluie",
+  "sounds.coolrain.rain_sounds_noteblock": "Bloc musical tintant sous la pluie",
+
+  "coolrain.midnightconfig.title": "Configuration de CoolRain"
+}
