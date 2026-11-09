@@ -74,14 +74,35 @@ public class CoolRainConfig extends MidnightConfig {
 
     @Entry(category = GENERAL, idMode = 1, name = "Fabric Blocks") public static List<Identifier> FABRIC_BLOCKS = toIdHelper(
             List.of(
-                    Blocks.WHITE_WOOL, Blocks.ORANGE_WOOL, Blocks.MAGENTA_WOOL, Blocks.LIGHT_BLUE_WOOL, Blocks.YELLOW_WOOL, Blocks.LIME_WOOL, Blocks.PINK_WOOL,
-                    Blocks.GRAY_WOOL, Blocks.LIGHT_GRAY_WOOL, Blocks.CYAN_WOOL, Blocks.PURPLE_WOOL, Blocks.BLUE_WOOL, Blocks.BROWN_WOOL, Blocks.GREEN_WOOL,
-                    Blocks.RED_WOOL, Blocks.BLACK_WOOL, Blocks.WHITE_CARPET, Blocks.ORANGE_CARPET, Blocks.MAGENTA_CARPET, Blocks.LIGHT_BLUE_CARPET,
-                    Blocks.YELLOW_CARPET, Blocks.LIME_CARPET, Blocks.PINK_CARPET, Blocks.GRAY_CARPET, Blocks.LIGHT_GRAY_CARPET, Blocks.CYAN_CARPET,
-                    Blocks.PURPLE_CARPET, Blocks.BLUE_CARPET, Blocks.BROWN_CARPET, Blocks.GREEN_CARPET, Blocks.RED_CARPET, Blocks.BLACK_CARPET,
-                    Blocks.WHITE_BED, Blocks.ORANGE_BED, Blocks.MAGENTA_BED, Blocks.LIGHT_BLUE_BED, Blocks.YELLOW_BED, Blocks.LIME_BED, Blocks.PINK_BED,
-                    Blocks.GRAY_BED, Blocks.LIGHT_GRAY_BED, Blocks.CYAN_BED, Blocks.PURPLE_BED, Blocks.BLUE_BED, Blocks.BROWN_BED, Blocks.GREEN_BED,
-                    Blocks.RED_BED, Blocks.BLACK_BED
+                    // Wool
+                    Blocks.WHITE_WOOL, Blocks.ORANGE_WOOL, Blocks.MAGENTA_WOOL, Blocks.LIGHT_BLUE_WOOL,
+                    Blocks.YELLOW_WOOL, Blocks.LIME_WOOL, Blocks.PINK_WOOL, Blocks.GRAY_WOOL,
+                    Blocks.LIGHT_GRAY_WOOL, Blocks.CYAN_WOOL, Blocks.PURPLE_WOOL, Blocks.BLUE_WOOL,
+                    Blocks.BROWN_WOOL, Blocks.GREEN_WOOL, Blocks.RED_WOOL, Blocks.BLACK_WOOL,
+    
+                    // Wool Stairs
+                    Blocks.WHITE_WOOL_STAIRS, Blocks.ORANGE_WOOL_STAIRS, Blocks.MAGENTA_WOOL_STAIRS, Blocks.LIGHT_BLUE_WOOL_STAIRS,
+                    Blocks.YELLOW_WOOL_STAIRS, Blocks.LIME_WOOL_STAIRS, Blocks.PINK_WOOL_STAIRS, Blocks.GRAY_WOOL_STAIRS,
+                    Blocks.LIGHT_GRAY_WOOL_STAIRS, Blocks.CYAN_WOOL_STAIRS, Blocks.PURPLE_WOOL_STAIRS, Blocks.BLUE_WOOL_STAIRS,
+                    Blocks.BROWN_WOOL_STAIRS, Blocks.GREEN_WOOL_STAIRS, Blocks.RED_WOOL_STAIRS, Blocks.BLACK_WOOL_STAIRS,
+    
+                    // Wool Slabs
+                    Blocks.WHITE_WOOL_SLAB, Blocks.ORANGE_WOOL_SLAB, Blocks.MAGENTA_WOOL_SLAB, Blocks.LIGHT_BLUE_WOOL_SLAB,
+                    Blocks.YELLOW_WOOL_SLAB, Blocks.LIME_WOOL_SLAB, Blocks.PINK_WOOL_SLAB, Blocks.GRAY_WOOL_SLAB,
+                    Blocks.LIGHT_GRAY_WOOL_SLAB, Blocks.CYAN_WOOL_SLAB, Blocks.PURPLE_WOOL_SLAB, Blocks.BLUE_WOOL_SLAB,
+                    Blocks.BROWN_WOOL_SLAB, Blocks.GREEN_WOOL_SLAB, Blocks.RED_WOOL_SLAB, Blocks.BLACK_WOOL_SLAB,
+    
+                    // Carpets
+                    Blocks.WHITE_CARPET, Blocks.ORANGE_CARPET, Blocks.MAGENTA_CARPET, Blocks.LIGHT_BLUE_CARPET,
+                    Blocks.YELLOW_CARPET, Blocks.LIME_CARPET, Blocks.PINK_CARPET, Blocks.GRAY_CARPET,
+                    Blocks.LIGHT_GRAY_CARPET, Blocks.CYAN_CARPET, Blocks.PURPLE_CARPET, Blocks.BLUE_CARPET,
+                    Blocks.BROWN_CARPET, Blocks.GREEN_CARPET, Blocks.RED_CARPET, Blocks.BLACK_CARPET,
+    
+                    // Beds
+                    Blocks.WHITE_BED, Blocks.ORANGE_BED, Blocks.MAGENTA_BED, Blocks.LIGHT_BLUE_BED,
+                    Blocks.YELLOW_BED, Blocks.LIME_BED, Blocks.PINK_BED, Blocks.GRAY_BED,
+                    Blocks.LIGHT_GRAY_BED, Blocks.CYAN_BED, Blocks.PURPLE_BED, Blocks.BLUE_BED,
+                    Blocks.BROWN_BED, Blocks.GREEN_BED, Blocks.RED_BED, Blocks.BLACK_BED
             )
     );
 
