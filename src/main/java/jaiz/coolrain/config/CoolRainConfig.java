@@ -3,6 +3,7 @@ package jaiz.coolrain.config;
 import eu.midnightdust.lib.config.MidnightConfig;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.WeatheringCopperCollection;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 
@@ -15,9 +16,14 @@ public class CoolRainConfig extends MidnightConfig {
     private static List<Identifier> toIdHelper(List<Block> blocks) {
         ArrayList<Identifier> output = new ArrayList<>();
         for (Block b : blocks) {
-            output.add(BuiltInRegistries.BLOCK.getKey(b));
+            output.add(BuiltInRegistries.BLOCK.getKey(b));    
         }
         return output;
+    }
+
+    private static void addCopperFamily(List<Block> blocks, WeatheringCopperCollection<Block> family) {
+        family.weathering().forEach(blocks::add);
+        family.waxed().forEach(blocks::add);
     }
 
     @Entry(category = GENERAL, name="Thunderstorm Winds")
