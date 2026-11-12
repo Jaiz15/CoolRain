@@ -60,41 +60,41 @@ public abstract class RainMixin {
 	
 		if(isAbove) {
 			if (CoolRainConfig.METAL_BLOCKS.contains(blockId) && CoolRainConfig.metalSounds) {
-				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_METAL, SoundSource.WEATHER, CoolRainConfig.metalBlocksVolume, world.getRandom().nextBetween(8, 12) * 0.1f, true);
+				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_METAL, SoundSource.WEATHER, CoolRainConfig.metalBlocksVolume, world.getRandom().nextIntBetweenInclusive(8, 12) * 0.1f, true);
 			} else if (CoolRainConfig.FABRIC_BLOCKS.contains(blockId) && CoolRainConfig.fabricSounds) {
-				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_FABRIC, SoundSource.WEATHER, CoolRainConfig.fabricBlocksVolume, world.getRandom().nextBetween(8, 12) * 0.1f, true);
+				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_FABRIC, SoundSource.WEATHER, CoolRainConfig.fabricBlocksVolume, world.getRandom().nextIntBetweenInclusive(8, 12) * 0.1f, true);
 			} else if (CoolRainConfig.GLASS_BLOCKS.contains(blockId) && CoolRainConfig.glassSounds) {
-				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_GLASS, SoundSource.WEATHER, CoolRainConfig.glassBlocksVolume, world.getRandom().nextBetween(8, 12) * 0.1f, true);
+				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_GLASS, SoundSource.WEATHER, CoolRainConfig.glassBlocksVolume, world.getRandom().nextIntBetweenInclusive(8, 12) * 0.1f, true);
 			} else {
 				world.playLocalSound(x, y, z, SoundEvents.WEATHER_RAIN_ABOVE, SoundSource.WEATHER, CoolRainConfig.vanillaRainVolume / 2, 0.75F, false);
 			}
 		} else {
 			if (CoolRainConfig.METAL_BLOCKS.contains(blockId) && CoolRainConfig.metalSounds) {
-				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_METAL, SoundSource.WEATHER, CoolRainConfig.metalBlocksVolume, world.getRandom().nextBetween(8, 12) * 0.1f, true);
+				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_METAL, SoundSource.WEATHER, CoolRainConfig.metalBlocksVolume, world.getRandom().nextIntBetweenInclusive(8, 12) * 0.1f, true);
 			} else if (CoolRainConfig.FABRIC_BLOCKS.contains(blockId) && CoolRainConfig.fabricSounds) {
-				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_FABRIC, SoundSource.WEATHER, CoolRainConfig.fabricBlocksVolume, world.getRandom().nextBetween(8, 12) * 0.1f, true);
+				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_FABRIC, SoundSource.WEATHER, CoolRainConfig.fabricBlocksVolume, world.getRandom().nextIntBetweenInclusive(8, 12) * 0.1f, true);
 			} else if (CoolRainConfig.GLASS_BLOCKS.contains(blockId) && CoolRainConfig.glassSounds) {
-				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_GLASS, SoundSource.WEATHER, CoolRainConfig.glassBlocksVolume, world.getRandom().nextBetween(8, 12) * 0.1f, true);
+				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_GLASS, SoundSource.WEATHER, CoolRainConfig.glassBlocksVolume, world.getRandom().nextIntBetweenInclusive(8, 12) * 0.1f, true);
 			} else if (CoolRainConfig.FOLIAGE_BLOCKS.contains(blockId) && CoolRainConfig.foliageSounds) {
 				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_FOLIAGE, SoundSource.WEATHER, CoolRainConfig.foliageBlocksVolume, 1.0f, true);
 			} else if (CoolRainConfig.WATER_BLOCKS.contains(blockId) && CoolRainConfig.waterSounds) {
-				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_WATER, SoundSource.WEATHER, CoolRainConfig.waterBlocksVolume, world.getRandom().nextBetween(8, 12) * 0.1f, true);
+				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_WATER, SoundSource.WEATHER, CoolRainConfig.waterBlocksVolume, world.getRandom().nextIntBetweenInclusive(8, 12) * 0.1f, true);
 			} else if (CoolRainConfig.CRYSTAL_BLOCKS.contains(blockId) && CoolRainConfig.crystalSounds) {
 				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_GLASS, SoundSource.WEATHER, CoolRainConfig.glassBlocksVolume, 1.0F, false);
-				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_AMETHYST, SoundSource.WEATHER, CoolRainConfig.crystalBlocksVolume, world.getRandom().nextBetween(6, 10) * 0.1f, false);
+				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_AMETHYST, SoundSource.WEATHER, CoolRainConfig.crystalBlocksVolume, world.getRandom().nextIntBetweenInclusive(6, 10) * 0.1f, false);
 			} else if (CoolRainConfig.MUSICAL_BLOCKS.contains(blockId) && CoolRainConfig.musicalSounds) {
 				world.playLocalSound(x, y, z, SoundEvents.WEATHER_RAIN, SoundSource.WEATHER, CoolRainConfig.vanillaRainVolume, 1.0F, false);
-				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_NOTEBLOCK, SoundSource.WEATHER, CoolRainConfig.musicalBlocksVolume, world.getRandom().nextBetween(8, 12) * 0.1f, false);
+				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_NOTEBLOCK, SoundSource.WEATHER, CoolRainConfig.musicalBlocksVolume, world.getRandom().nextIntBetweenInclusive(8, 12) * 0.1f, false);
 			}
 			else if (CoolRainConfig.BELL_BLOCKS.contains(blockId) && CoolRainConfig.bellSounds) {
-				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_METAL, SoundSource.WEATHER, CoolRainConfig.metalBlocksVolume, world.getRandom().nextBetween(8, 12) * 0.1f, true);
+				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_METAL, SoundSource.WEATHER, CoolRainConfig.metalBlocksVolume, world.getRandom().nextIntBetweenInclusive(8, 12) * 0.1f, true);
 				if(world.getRandom().nextInt(5) == 0) {
-					world.playLocalSound(x, y, z, SoundEvents.BLOCK_BELL_USE, SoundSource.WEATHER, CoolRainConfig.bellBlocksVolume, world.getRandom().nextBetween(8, 12) * 0.1f, false);
+					world.playLocalSound(x, y, z, SoundEvents.BLOCK_BELL_USE, SoundSource.WEATHER, CoolRainConfig.bellBlocksVolume, world.getRandom().nextIntBetweenInclusive(8, 12) * 0.1f, false);
 				}
 			}
 			else if (CoolRainConfig.EVAPORATIVE_BLOCKS.contains(blockId) && CoolRainConfig.evaporativeSounds) {
 				world.playLocalSound(x, y, z, CoolRainSounds.RAIN_SOUNDS_LAVA, SoundSource.WEATHER, CoolRainConfig.evaporativeBlocksVolume, 1.0F, true);
-				world.playLocalSound(x, y, z, SoundEvents.WEATHER_RAIN, SoundSource.WEATHER, CoolRainConfig.vanillaRainVolume, world.getRandom().nextBetween(8, 12) * 0.1f, false);
+				world.playLocalSound(x, y, z, SoundEvents.WEATHER_RAIN, SoundSource.WEATHER, CoolRainConfig.vanillaRainVolume, world.getRandom().nextIntBetweenInclusive(8, 12) * 0.1f, false);
 			} else {
 				world.playLocalSound(x, y, z, SoundEvents.WEATHER_RAIN, SoundSource.WEATHER, CoolRainConfig.vanillaRainVolume, 1.0F, false);
 			}
@@ -111,19 +111,19 @@ public abstract class RainMixin {
 
         if (world.isThundering()
                 && camera.y > 64
-                && world.hasRain(cameraPos)) {
+                && world.isRainingAt(cameraPos)) {
 
             if (CoolRainConfig.thunderstormWinds
 					&& world.getRandom().nextInt(CoolRainConfig.thunderstormWindsFrequency) == 0) {
 
                 world.playLocalSound(
-                        cameraPos.getX() + world.getRandom().nextBetween(-10, 10),
+                        cameraPos.getX() + world.getRandom().nextIntBetweenInclusive(-10, 10),
                         cameraPos.getY(),
-                        cameraPos.getZ() + world.getRandom().nextBetween(-10, 10),
+                        cameraPos.getZ() + world.getRandom().nextIntBetweenInclusive(-10, 10),
                         CoolRainSounds.WIND_SOUNDS,
                         SoundSource.WEATHER,
                         CoolRainConfig.thunderstormWindsVolume,
-                        world.getRandom().nextBetween(8, 12) * 0.1f,
+                        world.getRandom().nextIntBetweenInclusive(8, 12) * 0.1f,
                         true
                 );
             }
@@ -132,13 +132,13 @@ public abstract class RainMixin {
 				        && world.getRandom().nextInt(CoolRainConfig.additionalThunderFrequency) == 0) {
 
                 world.playLocalSound(
-                        cameraPos.getX() + world.getRandom().nextBetween(-50, 50),
+                        cameraPos.getX() + world.getRandom().nextIntBetweenInclusive(-50, 50),
                         cameraPos.getY() + 30,
-                        cameraPos.getZ() + world.getRandom().nextBetween(-50, 50),
+                        cameraPos.getZ() + world.getRandom().nextIntBetweenInclusive(-50, 50),
                         CoolRainSounds.ROLLING_THUNDER,
                         SoundSource.WEATHER,
                         CoolRainConfig.additionalThunderVolume,
-                        world.getRandom().nextBetween(8, 12) * 0.1f,
+                        world.getRandom().nextIntBetweenInclusive(8, 12) * 0.1f,
                         true
                 );
             }
