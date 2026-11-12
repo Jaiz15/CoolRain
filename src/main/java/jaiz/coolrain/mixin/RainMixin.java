@@ -12,6 +12,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Final;
@@ -63,15 +64,12 @@ public abstract class RainMixin {
         Block block = world.getBlockState(pos).getBlock();
         Identifier blockId = BuiltInRegistries.BLOCK.getKey(block);
 
-        // Carpets are only 1/16 block high, so the rain sound position can
-        // resolve to the air block above them. Check the block directly below
-        // when the sampled block is not already a fabric block.
-        if (!CoolRainConfig.FABRIC_BLOCKS.contains(blockId)) {
-            BlockPos belowPos = pos.below();
-            Identifier belowId = BuiltInRegistries.BLOCK.getKey(world.getBlockState(belowPos).getBlock());
-            if (CoolRainConfig.FABRIC_BLOCKS.contains(belowId)) {
-                blockId = belowId;
-            }
+        // Vanilla's MOTION_BLOCKING heightmap can ignore carpets, so the
+        // rain splash position may refer to the solid block underneath one.
+        // In that case, use the carpet directly above the sampled position.
+        Block aboveBlock = world.getBlockState(pos.above()).getBlock();
+        if (Blocks.CARPET.asList().contains(aboveBlock)) {
+            blockId = BuiltInRegistries.BLOCK.getKey(aboveBlock);
         }
 
         boolean isAbove = y > camera.y + 1.0
