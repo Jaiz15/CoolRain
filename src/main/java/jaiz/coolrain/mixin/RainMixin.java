@@ -63,6 +63,17 @@ public abstract class RainMixin {
         Block block = world.getBlockState(pos).getBlock();
         Identifier blockId = BuiltInRegistries.BLOCK.getKey(block);
 
+        // Carpets are only 1/16 block high, so the rain sound position can
+        // resolve to the air block above them. Check the block directly below
+        // when the sampled block is not already a fabric block.
+        if (!CoolRainConfig.FABRIC_BLOCKS.contains(blockId)) {
+            BlockPos belowPos = pos.below();
+            Identifier belowId = BuiltInRegistries.BLOCK.getKey(world.getBlockState(belowPos).getBlock());
+            if (CoolRainConfig.FABRIC_BLOCKS.contains(belowId)) {
+                blockId = belowId;
+            }
+        }
+
         boolean isAbove = y > camera.y + 1.0
                 && world.getHeightmapPos(
                     Heightmap.Types.MOTION_BLOCKING,
