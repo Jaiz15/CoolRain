@@ -44,6 +44,26 @@ public class CoolRainConfig extends MidnightConfig {
         return toIdHelper(blocks);
     }
 
+    private static List<Identifier> createGlassBlocks() {
+        List<Block> blocks = new ArrayList<>();
+    
+        // Stained Glass (16 colors)
+        blocks.addAll(Blocks.STAINED_GLASS.asList());
+    
+        blocks.addAll(List.of(
+            Blocks.GLASS,
+            Blocks.TINTED_GLASS,
+            Blocks.ICE,
+            Blocks.BLUE_ICE,
+            Blocks.PACKED_ICE,
+            Blocks.REDSTONE_LAMP,
+            Blocks.DAYLIGHT_DETECTOR,
+            Blocks.BEACON
+        ));
+    
+        return toIdHelper(blocks);
+    }
+
     @Entry(category = GENERAL, name="Thunderstorm Winds")
     public static boolean thunderstormWinds = true;
 
@@ -124,16 +144,8 @@ public class CoolRainConfig extends MidnightConfig {
             )
     );
 
-    @Entry(category = GENERAL, idMode = 1, name = "Glass Blocks") public static List<Identifier> GLASS_BLOCKS = toIdHelper(
-            List.of(
-                    Blocks.GLASS, Blocks.TINTED_GLASS, Blocks.ICE, Blocks.BLUE_ICE, Blocks.PACKED_ICE, Blocks.LIGHT_GRAY_STAINED_GLASS,
-                    Blocks.GREEN_STAINED_GLASS, Blocks.BROWN_STAINED_GLASS, Blocks.BLUE_STAINED_GLASS, Blocks.RED_STAINED_GLASS, Blocks.PINK_STAINED_GLASS,
-                    Blocks.MAGENTA_STAINED_GLASS, Blocks.YELLOW_STAINED_GLASS, Blocks.GRAY_STAINED_GLASS, Blocks.BLACK_STAINED_GLASS, Blocks.WHITE_STAINED_GLASS,
-                    Blocks.LIME_STAINED_GLASS, Blocks.PURPLE_STAINED_GLASS, Blocks.LIGHT_BLUE_STAINED_GLASS, Blocks.ORANGE_STAINED_GLASS,
-                    Blocks.CYAN_STAINED_GLASS, Blocks.REDSTONE_LAMP, Blocks.DAYLIGHT_DETECTOR, Blocks.BEACON
-
-            )
-    );
+    @Entry(category = GENERAL, idMode = 1, name = "Glass Blocks")
+    public static List<Identifier> GLASS_BLOCKS = createGlassBlocks();
 
     @Entry(category = GENERAL, idMode = 1, name = "Crystal Blocks") public static List<Identifier> CRYSTAL_BLOCKS = toIdHelper(
             List.of(
