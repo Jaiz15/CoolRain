@@ -1,22 +1,21 @@
 package jaiz.coolrain.config;
 
 import eu.midnightdust.lib.config.MidnightConfig;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.registry.Registries;
-import net.minecraft.util.Identifier;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.Identifier;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CoolRainConfig extends MidnightConfig {
     public static final String GENERAL = "general";
-
+    
     private static List<Identifier> toIdHelper(List<Block> blocks) {
         ArrayList<Identifier> output = new ArrayList<>();
         for (Block b : blocks) {
-            output.add(Registries.BLOCK.getId(b));
-
+            output.add(BuiltInRegistries.BLOCK.getKey(b));
         }
         return output;
     }
