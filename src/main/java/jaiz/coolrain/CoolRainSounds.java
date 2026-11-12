@@ -3,7 +3,7 @@ package jaiz.coolrain;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.Registry;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 public class CoolRainSounds {
 
@@ -20,7 +20,7 @@ public class CoolRainSounds {
     public static final SoundEvent ROLLING_THUNDER = registerSoundEvent("rolling_thunder");
 
     private static SoundEvent registerSoundEvent(String name) {
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("coolrain", name);
+        Identifier id = Identifier.fromNamespaceAndPath("coolrain", name);
         return Registry.register(
             BuiltInRegistries.SOUND_EVENT,
             id,
