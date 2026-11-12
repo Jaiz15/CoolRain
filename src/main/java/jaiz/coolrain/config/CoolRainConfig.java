@@ -26,6 +26,24 @@ public class CoolRainConfig extends MidnightConfig {
         family.waxed().forEach(blocks::add);
     }
 
+    private static List<Identifier> createFabricBlocks() {
+        List<Block> blocks = new ArrayList<>(Blocks.WOOL.asList());
+        
+        // Wool Stairs
+        blocks.addAll(Blocks.WOOL_STAIRS.asList());
+    
+        // Wool Slabs
+        blocks.addAll(Blocks.WOOL_SLAB.asList());
+    
+        // Carpets
+        blocks.addAll(Blocks.CARPET.asList());
+    
+        // Beds
+        blocks.addAll(Blocks.BED.asList());
+        
+        return toIdHelper(blocks);
+    }
+
     @Entry(category = GENERAL, name="Thunderstorm Winds")
     public static boolean thunderstormWinds = true;
 
@@ -51,65 +69,38 @@ public class CoolRainConfig extends MidnightConfig {
     @Entry(category = GENERAL, name="Rain Sounds On Bell Blocks")
     public static boolean bellSounds = true;
 
-    @Entry(category = GENERAL, idMode = 1, name = "Metal Blocks") public static List<Identifier> METAL_BLOCKS = toIdHelper(
-            List.of(
-                    Blocks.COPPER_BLOCK, Blocks.WEATHERED_COPPER, Blocks.EXPOSED_COPPER, Blocks.OXIDIZED_COPPER,
-                    Blocks.WAXED_COPPER_BLOCK, Blocks.WAXED_WEATHERED_COPPER, Blocks.WAXED_EXPOSED_COPPER, Blocks.WAXED_OXIDIZED_COPPER,
-                    Blocks.COPPER_BULB, Blocks.WEATHERED_COPPER_BULB, Blocks.EXPOSED_COPPER_BULB, Blocks.OXIDIZED_COPPER_BULB,
-                    Blocks.WAXED_COPPER_BULB, Blocks.WAXED_WEATHERED_COPPER_BULB, Blocks.WAXED_EXPOSED_COPPER_BULB, Blocks.WAXED_OXIDIZED_COPPER_BULB,
-                    Blocks.COPPER_GRATE, Blocks.WEATHERED_COPPER_GRATE, Blocks.EXPOSED_COPPER_GRATE, Blocks.OXIDIZED_COPPER_GRATE,
-                    Blocks.WAXED_COPPER_GRATE, Blocks.WAXED_WEATHERED_COPPER_GRATE, Blocks.WAXED_EXPOSED_COPPER_GRATE, Blocks.WAXED_OXIDIZED_COPPER_GRATE,
-                    Blocks.CHISELED_COPPER, Blocks.WEATHERED_CHISELED_COPPER, Blocks.EXPOSED_CHISELED_COPPER, Blocks.OXIDIZED_CHISELED_COPPER,
-                    Blocks.WAXED_CHISELED_COPPER, Blocks.WAXED_WEATHERED_CHISELED_COPPER, Blocks.WAXED_EXPOSED_CHISELED_COPPER, Blocks.WAXED_OXIDIZED_CHISELED_COPPER,
-                    Blocks.CUT_COPPER, Blocks.WEATHERED_CUT_COPPER, Blocks.EXPOSED_CUT_COPPER, Blocks.OXIDIZED_CUT_COPPER,
-                    Blocks.WAXED_CUT_COPPER, Blocks.WAXED_WEATHERED_CUT_COPPER, Blocks.WAXED_EXPOSED_CUT_COPPER, Blocks.WAXED_OXIDIZED_CUT_COPPER,
-                    Blocks.CUT_COPPER_STAIRS, Blocks.WEATHERED_CUT_COPPER_STAIRS, Blocks.EXPOSED_CUT_COPPER_STAIRS, Blocks.OXIDIZED_CUT_COPPER_STAIRS,
-                    Blocks.WAXED_CUT_COPPER_STAIRS, Blocks.WAXED_WEATHERED_CUT_COPPER_STAIRS, Blocks.WAXED_EXPOSED_CUT_COPPER_STAIRS, Blocks.WAXED_OXIDIZED_CUT_COPPER_STAIRS,
-                    Blocks.CUT_COPPER_SLAB, Blocks.WEATHERED_CUT_COPPER_SLAB, Blocks.EXPOSED_CUT_COPPER_SLAB, Blocks.OXIDIZED_CUT_COPPER_SLAB,
-                    Blocks.WAXED_CUT_COPPER_SLAB, Blocks.WAXED_WEATHERED_CUT_COPPER_SLAB, Blocks.WAXED_EXPOSED_CUT_COPPER_SLAB, Blocks.WAXED_OXIDIZED_CUT_COPPER_SLAB,
-                    Blocks.COPPER_TRAPDOOR, Blocks.EXPOSED_COPPER_TRAPDOOR, Blocks.WEATHERED_COPPER_TRAPDOOR, Blocks.OXIDIZED_COPPER_TRAPDOOR,
-                    Blocks.WAXED_COPPER_TRAPDOOR, Blocks.WAXED_EXPOSED_COPPER_TRAPDOOR, Blocks.WAXED_WEATHERED_COPPER_TRAPDOOR, Blocks.WAXED_OXIDIZED_COPPER_TRAPDOOR,
-                    Blocks.LANTERN, Blocks.SOUL_LANTERN, Blocks.IRON_TRAPDOOR, Blocks.NETHERITE_BLOCK,
-                    Blocks.IRON_BLOCK, Blocks.RAW_IRON_BLOCK, Blocks.RAW_COPPER_BLOCK, Blocks.RAW_GOLD_BLOCK,
-                    Blocks.CRACKED_DEEPSLATE_TILES, Blocks.DEEPSLATE_TILE_SLAB, Blocks.DEEPSLATE_TILES, Blocks.DEEPSLATE_TILE_STAIRS,
-                    Blocks.GOLD_BLOCK, Blocks.CAULDRON, Blocks.ANVIL, Blocks.CHIPPED_ANVIL, Blocks.DAMAGED_ANVIL, Blocks.SMITHING_TABLE,
-                    Blocks.ANCIENT_DEBRIS, Blocks.GILDED_BLACKSTONE, Blocks.TRIAL_SPAWNER, Blocks.VAULT, Blocks.SPAWNER, Blocks.HOPPER, Blocks.CHAIN
-            )
-    );
+    @Entry(category = GENERAL, idMode = 1, name = "Metal Blocks")
+    public static List<Identifier> METAL_BLOCKS = createMetalBlocks();
+    
+    private static List<Identifier> createMetalBlocks() {
+        List<Block> blocks = new ArrayList<>();
+    
+        addCopperFamily(blocks, Blocks.COPPER_BLOCK);
+        addCopperFamily(blocks, Blocks.COPPER_BULB);
+        addCopperFamily(blocks, Blocks.COPPER_GRATE);
+        addCopperFamily(blocks, Blocks.CHISELED_COPPER);
+        addCopperFamily(blocks, Blocks.CUT_COPPER);
+        addCopperFamily(blocks, Blocks.CUT_COPPER_STAIRS);
+        addCopperFamily(blocks, Blocks.CUT_COPPER_SLAB);
+        addCopperFamily(blocks, Blocks.COPPER_TRAPDOOR);
+    
+        blocks.addAll(List.of(
+                Blocks.LANTERN, Blocks.SOUL_LANTERN, Blocks.IRON_TRAPDOOR, Blocks.IRON_CHAIN,
+                Blocks.NETHERITE_BLOCK, Blocks.IRON_BLOCK, Blocks.RAW_IRON_BLOCK,
+                Blocks.RAW_COPPER_BLOCK, Blocks.RAW_GOLD_BLOCK,
+                Blocks.CRACKED_DEEPSLATE_TILES, Blocks.DEEPSLATE_TILE_SLAB,
+                Blocks.DEEPSLATE_TILES, Blocks.DEEPSLATE_TILE_STAIRS,
+                Blocks.GOLD_BLOCK, Blocks.CAULDRON, Blocks.ANVIL,
+                Blocks.CHIPPED_ANVIL, Blocks.DAMAGED_ANVIL, Blocks.SMITHING_TABLE,
+                Blocks.ANCIENT_DEBRIS, Blocks.GILDED_BLACKSTONE,
+                Blocks.TRIAL_SPAWNER, Blocks.VAULT, Blocks.SPAWNER, Blocks.HOPPER
+        ));
+    
+        return toIdHelper(blocks);
+    }
 
-    @Entry(category = GENERAL, idMode = 1, name = "Fabric Blocks") public static List<Identifier> FABRIC_BLOCKS = toIdHelper(
-            List.of(
-                    // Wool
-                    Blocks.WHITE_WOOL, Blocks.ORANGE_WOOL, Blocks.MAGENTA_WOOL, Blocks.LIGHT_BLUE_WOOL,
-                    Blocks.YELLOW_WOOL, Blocks.LIME_WOOL, Blocks.PINK_WOOL, Blocks.GRAY_WOOL,
-                    Blocks.LIGHT_GRAY_WOOL, Blocks.CYAN_WOOL, Blocks.PURPLE_WOOL, Blocks.BLUE_WOOL,
-                    Blocks.BROWN_WOOL, Blocks.GREEN_WOOL, Blocks.RED_WOOL, Blocks.BLACK_WOOL,
-
-                    // Wool Stairs
-                    Blocks.WHITE_WOOL_STAIRS, Blocks.ORANGE_WOOL_STAIRS, Blocks.MAGENTA_WOOL_STAIRS, Blocks.LIGHT_BLUE_WOOL_STAIRS,
-                    Blocks.YELLOW_WOOL_STAIRS, Blocks.LIME_WOOL_STAIRS, Blocks.PINK_WOOL_STAIRS, Blocks.GRAY_WOOL_STAIRS,
-                    Blocks.LIGHT_GRAY_WOOL_STAIRS, Blocks.CYAN_WOOL_STAIRS, Blocks.PURPLE_WOOL_STAIRS, Blocks.BLUE_WOOL_STAIRS,
-                    Blocks.BROWN_WOOL_STAIRS, Blocks.GREEN_WOOL_STAIRS, Blocks.RED_WOOL_STAIRS, Blocks.BLACK_WOOL_STAIRS,
-
-                    // Wool Slabs
-                    Blocks.WHITE_WOOL_SLAB, Blocks.ORANGE_WOOL_SLAB, Blocks.MAGENTA_WOOL_SLAB, Blocks.LIGHT_BLUE_WOOL_SLAB,
-                    Blocks.YELLOW_WOOL_SLAB, Blocks.LIME_WOOL_SLAB, Blocks.PINK_WOOL_SLAB, Blocks.GRAY_WOOL_SLAB,
-                    Blocks.LIGHT_GRAY_WOOL_SLAB, Blocks.CYAN_WOOL_SLAB, Blocks.PURPLE_WOOL_SLAB, Blocks.BLUE_WOOL_SLAB,
-                    Blocks.BROWN_WOOL_SLAB, Blocks.GREEN_WOOL_SLAB, Blocks.RED_WOOL_SLAB, Blocks.BLACK_WOOL_SLAB,
-
-                    // Carpets
-                    Blocks.WHITE_CARPET, Blocks.ORANGE_CARPET, Blocks.MAGENTA_CARPET, Blocks.LIGHT_BLUE_CARPET,
-                    Blocks.YELLOW_CARPET, Blocks.LIME_CARPET, Blocks.PINK_CARPET, Blocks.GRAY_CARPET,
-                    Blocks.LIGHT_GRAY_CARPET, Blocks.CYAN_CARPET, Blocks.PURPLE_CARPET, Blocks.BLUE_CARPET,
-                    Blocks.BROWN_CARPET, Blocks.GREEN_CARPET, Blocks.RED_CARPET, Blocks.BLACK_CARPET,
-
-                    // Beds
-                    Blocks.WHITE_BED, Blocks.ORANGE_BED, Blocks.MAGENTA_BED, Blocks.LIGHT_BLUE_BED,
-                    Blocks.YELLOW_BED, Blocks.LIME_BED, Blocks.PINK_BED, Blocks.GRAY_BED,
-                    Blocks.LIGHT_GRAY_BED, Blocks.CYAN_BED, Blocks.PURPLE_BED, Blocks.BLUE_BED,
-                    Blocks.BROWN_BED, Blocks.GREEN_BED, Blocks.RED_BED, Blocks.BLACK_BED
-            )
-    );
+    @Entry(category = GENERAL, idMode = 1, name = "Fabric Blocks")
+    public static List<Identifier> FABRIC_BLOCKS = createFabricBlocks();
 
     @Entry(category = GENERAL, idMode = 1, name = "Foliage Blocks") public static List<Identifier> FOLIAGE_BLOCKS = toIdHelper(
             List.of(
