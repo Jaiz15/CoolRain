@@ -1,9 +1,9 @@
 package jaiz.coolrain;
 
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.Registry;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.resources.Identifier;
 
 public class CoolRainSounds {
 
@@ -16,13 +16,16 @@ public class CoolRainSounds {
     public static final SoundEvent RAIN_SOUNDS_AMETHYST = registerSoundEvent("rain_sounds_amethyst");
     public static final SoundEvent RAIN_SOUNDS_NOTEBLOCK = registerSoundEvent("rain_sounds_noteblock");
 
-
     public static final SoundEvent WIND_SOUNDS = registerSoundEvent("wind_sounds");
     public static final SoundEvent ROLLING_THUNDER = registerSoundEvent("rolling_thunder");
 
     private static SoundEvent registerSoundEvent(String name) {
-        Identifier id = Identifier.of("coolrain", name);
-        return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));
+        Identifier id = Identifier.fromNamespaceAndPath("coolrain", name);
+        return Registry.register(
+            BuiltInRegistries.SOUND_EVENT,
+            id,
+            SoundEvent.createVariableRangeEvent(id)
+        );
     }
 
     public static void registerSounds() {
