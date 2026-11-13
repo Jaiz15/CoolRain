@@ -68,7 +68,9 @@ public abstract class RainMixin {
         // rain splash position may refer to the solid block underneath one.
         // In that case, use the carpet directly above the sampled position.
         Block aboveBlock = world.getBlockState(pos.above()).getBlock();
-        if (Blocks.CARPET.asList().contains(aboveBlock)) {
+        if (Blocks.CARPET.asList().contains(aboveBlock)
+                || Blocks.WOOL_STAIRS.asList().contains(aboveBlock)
+                || Blocks.WOOL_SLAB.asList().contains(aboveBlock)) {
             blockId = BuiltInRegistries.BLOCK.getKey(aboveBlock);
         }
 
