@@ -12,6 +12,43 @@ import java.util.List;
 
 public class CoolRainConfig extends MidnightConfig {
     public static final String GENERAL = "general";
+
+    /*
+     * Increment this value when a config migration is required.
+     * Hidden keeps the migration marker out of the config screen while
+     * allowing MidnightLib to persist it in coolrain.json.
+     */
+    @Entry(category = GENERAL)
+    @MidnightConfig.Hidden
+    public static int configVersion = 0;
+
+    @Override
+    public void loadValuesFromJson() {
+        super.loadValuesFromJson();
+
+        // Version 1 adds wool stairs and slabs without resetting user settings.
+        if (configVersion < 1) {
+            if (FABRIC_BLOCKS == null) {
+                FABRIC_BLOCKS = new ArrayList<>();
+            }
+
+            List<Identifier> newFabricBlocks = new ArrayList<>();
+            newFabricBlocks.addAll(toIdHelper(Blocks.WOOL_STAIRS.asList()));
+            newFabricBlocks.addAll(toIdHelper(Blocks.WOOL_SLAB.asList()));
+
+            for (Identifier blockId : newFabricBlocks) {
+                if (!FABRIC_BLOCKS.contains(blockId)) {
+                    FABRIC_BLOCKS.add(blockId);
+                }
+            }
+
+            configVersion = 1;
+            MidnightConfig.write("coolrain");
+
+            // Refresh MidnightLib's cached entry values after the migration.
+            super.loadValuesFromJson();
+        }
+    }
     
     private static List<Identifier> toIdHelper(List<Block> blocks) {
         ArrayList<Identifier> output = new ArrayList<>();
