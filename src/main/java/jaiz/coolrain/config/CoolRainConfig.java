@@ -32,11 +32,10 @@ public class CoolRainConfig extends MidnightConfig {
                 FABRIC_BLOCKS = new ArrayList<>();
             }
 
-            List<Identifier> newFabricBlocks = new ArrayList<>();
-            newFabricBlocks.addAll(toIdHelper(Blocks.WOOL_STAIRS.asList()));
-            newFabricBlocks.addAll(toIdHelper(Blocks.WOOL_SLAB.asList()));
-
-            for (Identifier blockId : newFabricBlocks) {
+            // Add every current default Fabric Block, not only the blocks from this migration.
+            // Existing custom entries are preserved, and user-removed entries are not re-added
+            // on later launches because the migration version is saved below.
+            for (Identifier blockId : createFabricBlocks()) {
                 if (!FABRIC_BLOCKS.contains(blockId)) {
                     FABRIC_BLOCKS.add(blockId);
                 }
